@@ -17,8 +17,8 @@
 
   ul {
     @include trans;
-    display: flexbox;
-    justify-content: first baseline;
+    display: flex;
+    justify-content: baseline;
     justify-items: center;
     list-style: none;
     height: 100vh;

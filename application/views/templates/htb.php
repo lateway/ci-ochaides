@@ -3,18 +3,21 @@
 	<div class="bars"><i class="material-icons">menu</i></div>
 	<div class="logo"><img src="<?= base_url('assets/img/logo/ochaides2.png') ?>" alt="Ochaides"></div>
 
-	<div class="search_bar">
-		<input type="button" value="Search something...bro">
-
-	</div>
+	<form class="searchform">
+		<input type="search" value="" placeholder="Search" class="search-input">
+		<button type="submit" class="search-button">
+			<i class="material-icons">search</i>
+		</button>
+	</form>
 
 	<div class="nav_link">
 		<ul>
-
-			<li><a href="#">event</a></li>
-			<li><a href="#">news</a></li>
+			<li><a href="#"><i class="material-icons skew">apps</i></a></li>
+			<li><a href="#"><i class="material-icons skew">attach_file</i></a></li>
+			<li><a href="#"><i class="material-icons skew">code</i></a></li>
 		</ul>
 	</div>
+
 	<div class="more">
 		<i class="morebtn material-icons" id="morevert" data-text-swap="close">more_vert</i>
 		<div class="more_content hide">

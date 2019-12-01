@@ -11,7 +11,12 @@ $colors: (
   item: rgb(0, 0, 0),
   item2: rgba(0, 0, 0, 0.2),
   item5: rgba(0, 0, 0, 0.5),
-  dark: #21292d
+  dark: #21292d,
+  trans: rgba(255, 255, 255, 0),
+  pinkp: #ff6561,
+  creamp: #ffe5a5,
+  greenp: #00cabc,
+  coffeemilk: #f4d381;
 );
 
 @function clr($color-name) {

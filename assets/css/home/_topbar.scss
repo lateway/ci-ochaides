@@ -1,17 +1,19 @@
 //--------------------------------------------------------------------------- TOPBAR
+
 #tb {
-  /* TOP BAR AREA*/
+  /* ------------------TOP BAR AREA*/
   width: 100%;
   background-color: clr(blue);
   position: fixed;
   height: $tbh !important;
   z-index: 888;
   display: grid;
-  grid-template-columns: 72px 120px 2fr 360px 72px;
+  grid-template-columns: 72px 150px 1fr 150px 72px;
   grid-template-rows: 72px;
   grid-template-areas: "bars logo search nav_link morevert";
   justify-content: start;
 
+  // MENU BUTTON
   .bars {
     height: $tbh;
     grid-area: bars;
@@ -25,6 +27,7 @@
     }
   }
 
+  // LOGO WEB
   .logo {
     color: tomato;
     font-size: 1.5rem;
@@ -38,22 +41,154 @@
     }
   }
 
-  .search_bar {
-    height: 28px;
-    align-self: center;
-    background-color: rgba(46, 46, 46, 0.836);
-    color: rgba(150, 144, 238, 0.664);
-    text-align: justify;
-    padding-left: 20px;
-    overflow: auto;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+  // SEARCH BAR
+  .searchform {
     grid-area: search;
     grid-column: 3/4;
-    cursor: text;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 40px;
+    border-radius: 40px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translate(-50%, -50%);
+    background: #fff;
+    transition: all 0.3s ease;
+
+    &.focus {
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+    }
   }
 
+  .search-input {
+    position: absolute;
+    top: 10px;
+    left: 38px;
+    font-size: 14px;
+    background: none;
+    color: #5a6674;
+    width: 195px;
+    height: 20px;
+    border: none;
+    appearance: none;
+    outline: none;
+
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+
+  .search-button {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none !important;
+    cursor: pointer;
+
+    & svg {
+      width: 20px;
+      height: 20px;
+      fill: #5a6674;
+    }
+  }
+
+  .search-option {
+    position: absolute;
+    text-align: right;
+    top: 10px;
+    right: 15px;
+
+    div {
+      position: relative;
+      display: inline-block;
+      margin: 0 1px;
+      cursor: pointer;
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.01;
+        cursor: pointer;
+      }
+
+      span {
+        position: absolute;
+        display: block;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        background: #929aa3;
+        color: #fff;
+        font-size: 9px;
+        letter-spacing: 1px;
+        line-height: 1;
+        text-transform: uppercase;
+        padding: 4px 7px;
+        border-radius: 12px;
+        top: -18px;
+        transition: all 0.2s ease-in-out;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-top: 4px solid #929aa3;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+
+      &:hover span {
+        opacity: 1;
+        top: -21px;
+      }
+
+      label {
+        display: block;
+        cursor: pointer;
+      }
+
+      svg {
+        height: 20px;
+        width: 20px;
+        fill: #5a6674;
+        opacity: 0.6;
+        transition: all 0.2s ease-in-out;
+        pointer-events: none;
+      }
+
+      &:hover svg {
+        opacity: 1;
+      }
+
+      input:checked + label svg {
+        fill: $color;
+        opacity: 0.9;
+      }
+
+      input:checked + label span {
+        background: $color;
+
+        &::after {
+          border-top-color: $color;
+        }
+      }
+    }
+  }
+
+  // LINK NAVIGATION
   .nav_link {
     display: flex;
     justify-content: flex-end;
@@ -96,6 +231,7 @@
     }
   }
 
+  //MORE BUTTON
   .more {
     grid-area: morevert;
     grid-column: 5/6;
@@ -110,7 +246,6 @@
 
     .morebtn {
       color: clr(wht);
-      padding: 16px;
       font-size: 24px;
       border: none;
       cursor: pointer;
