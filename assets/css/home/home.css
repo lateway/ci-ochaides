@@ -942,8 +942,8 @@ body {
   transition: margin-left 0.5s;
   -ms-grid-columns: 72px 3fr 1.4fr 72px;
       grid-template-columns: 72px 3fr 1.4fr 72px;
-  -ms-grid-rows: 72px 10fr 56px;
-      grid-template-rows: 72px 10fr 56px;
+  -ms-grid-rows: 400px 10fr 56px;
+      grid-template-rows: 400px 10fr 56px;
       grid-template-areas: "header header header" "leftsidebar content sidebar" "leftsidebar footer footer";
 }
 
@@ -951,8 +951,8 @@ body {
   #wrap {
     -ms-grid-columns: 72px 1fr;
         grid-template-columns: 72px 1fr;
-    -ms-grid-rows: 56px auto auto 40px;
-        grid-template-rows: 56px auto auto 40px;
+    -ms-grid-rows: 200px auto auto 40px;
+        grid-template-rows: 200px auto auto 40px;
         grid-template-areas: "header header" "leftsidebar content" "leftsidebar sidebar rightsidebar" "leftsidebar footer";
   }
 }
