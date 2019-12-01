@@ -655,10 +655,14 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 #tb .bars i {
-  padding: 1rem 1.5rem;
   color: #fff;
 }
 
@@ -672,13 +676,15 @@ body {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  display: flexbox;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 #tb .logo img {
   justify-items: center;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
 }
 
 #tb .search_bar {
@@ -863,7 +869,7 @@ body {
   position: fixed;
   width: 72px;
   height: 100vh;
-  top: 56px;
+  top: 72px;
   left: 0;
   bottom: 0;
   z-index: 999;
