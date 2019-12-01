@@ -3,12 +3,7 @@
 	<div class="bars"><i class="material-icons">menu</i></div>
 	<div class="logo"><img src="<?= base_url('assets/img/logo/ochaides2.png') ?>" alt="Ochaides"></div>
 
-	<form class="searchform">
-		<input type="search" value="" placeholder="Search" class="search-input">
-		<button type="submit" class="search-button">
-			<i class="material-icons">search</i>
-		</button>
-	</form>
+
 
 	<div class="nav_link">
 		<ul>
