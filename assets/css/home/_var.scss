@@ -1,0 +1,35 @@
+$colors: (
+  blue: #007fe6f3,
+  blue2: #007fe6,
+  primary-light: lighten(#005dff, 40%),
+  primary-dark: darken(#005dff, 40%),
+  bluesky: #43d7ff,
+  mygreen: rgb(57, 223, 93),
+  red: #ff0000,
+  wht: #fff,
+  wht2: rgb(238, 238, 238),
+  item: rgb(0, 0, 0),
+  item2: rgba(0, 0, 0, 0.2),
+  item5: rgba(0, 0, 0, 0.5),
+  dark: #21292d
+);
+
+@function clr($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+$fonts: (
+  xl: 3rem,
+  lg: 2rem,
+  md: 1.2rem,
+  sm: 0.8rem
+);
+
+@function fonz($font-name) {
+  @return map-get($fonts, $font-name);
+}
+
+$padding: 1rem;
+$borders: 1rem;
+
+$tbh: 56px;

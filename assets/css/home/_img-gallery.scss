@@ -1,0 +1,11 @@
+//--------------------------------------------------------------------------- img gallery 1
+.gallery1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  img {
+    display: block;
+    box-shadow: -1px 0px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+  }
+}

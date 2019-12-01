@@ -1,0 +1,170 @@
+//--------------------------------------------------------------------------- TOPBAR
+#tb {
+  /* TOP BAR AREA*/
+  width: 100%;
+  background-color: clr(blue);
+  position: fixed;
+  height: $tbh !important;
+  z-index: 888;
+  display: grid;
+  grid-template-columns: 72px 120px 2fr 360px 72px;
+  grid-template-rows: 56px;
+  grid-template-areas: "bars logo search nav_link morevert";
+  justify-content: start;
+
+  .bars {
+    height: $tbh;
+    grid-area: bars;
+    grid-column: 1/2;
+
+    i {
+      padding: 1rem 1.5rem;
+      color: clr(wht);
+    }
+  }
+
+  .logo {
+    height: $tbh;
+    color: tomato;
+    font-size: 1.5rem;
+    grid-area: logo;
+    grid-column: 2/3;
+    display: flexbox;
+
+    img {
+      justify-items: center;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .search_bar {
+    height: 28px;
+    align-self: center;
+    background-color: rgba(46, 46, 46, 0.836);
+    color: rgba(150, 144, 238, 0.664);
+    text-align: justify;
+    padding-left: 20px;
+    overflow: auto;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    grid-area: search;
+    grid-column: 3/4;
+    cursor: text;
+  }
+
+  .nav_link {
+    display: flex;
+    justify-content: flex-end;
+    justify-items: center;
+    grid-area: nav_link;
+    grid-column: 4/5;
+
+    ul {
+      margin: 0 0 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      justify-items: center;
+      list-style: none;
+      @include trans;
+
+      li {
+        align-self: center;
+        padding: 0;
+        a {
+          font-size: 0.9rem;
+          margin: 0.5rem;
+          color: clr(wht);
+          text-decoration: none;
+          @include cap;
+
+          &:hover,
+          &:focus {
+            color: clr(mygreen);
+          }
+        }
+        .active {
+          background-color: clr(wht);
+          @include rad(50px);
+        }
+      }
+
+      @include mq-max(720px) {
+        display: none;
+      }
+    }
+  }
+
+  .more {
+    grid-area: morevert;
+    grid-column: 5/6;
+    display: flex;
+    justify-content: center;
+
+    i {
+      align-self: center;
+      padding: 0;
+      color: clr(wht);
+    }
+
+    .morebtn {
+      color: clr(wht);
+      padding: 16px;
+      font-size: 24px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .more_content {
+      position: absolute;
+      width: 72px;
+      height: 100vh;
+      top: 56px;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      display: block;
+      background-color: clr(blue);
+
+      ul {
+        @include trans;
+        display: flexbox;
+        justify-content: first baseline;
+        justify-items: center;
+        list-style: none;
+        height: 100vh;
+        padding: 0;
+        margin: 30px auto;
+
+        li {
+          align-self: center;
+          list-style: none;
+          display: block;
+          height: 3em;
+
+          a {
+            text-align: center;
+            align-self: center;
+            display: inline;
+            font-size: 0.9rem;
+            color: clr(wht);
+            padding: 0.4rem;
+            text-decoration: none;
+            display: block;
+            &:hover {
+              color: clr(mygreen);
+            }
+          }
+        }
+      }
+    }
+    .show {
+      display: block;
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+}
