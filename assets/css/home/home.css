@@ -633,14 +633,14 @@ body {
   width: 100%;
   background-color: #007fe6f3;
   position: fixed;
-  height: 56px !important;
+  height: 72px !important;
   z-index: 888;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 72px 120px 2fr 360px 72px;
       grid-template-columns: 72px 120px 2fr 360px 72px;
-  -ms-grid-rows: 56px;
-      grid-template-rows: 56px;
+  -ms-grid-rows: 72px;
+      grid-template-rows: 72px;
       grid-template-areas: "bars logo search nav_link morevert";
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -648,7 +648,7 @@ body {
 }
 
 #tb .bars {
-  height: 56px;
+  height: 72px;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: bars;
@@ -663,7 +663,7 @@ body {
 }
 
 #tb .logo {
-  height: 56px;
+  height: 72px;
   color: tomato;
   font-size: 1.5rem;
   -ms-grid-row: 1;
@@ -933,8 +933,8 @@ body {
   transition: margin-left 0.5s;
   -ms-grid-columns: 72px 3fr 1.4fr 72px;
       grid-template-columns: 72px 3fr 1.4fr 72px;
-  -ms-grid-rows: 56px 10fr 56px;
-      grid-template-rows: 56px 10fr 56px;
+  -ms-grid-rows: 72px 10fr 56px;
+      grid-template-rows: 72px 10fr 56px;
       grid-template-areas: "header header header" "leftsidebar content sidebar" "leftsidebar footer footer";
 }
 
