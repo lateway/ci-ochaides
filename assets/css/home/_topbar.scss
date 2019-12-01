@@ -16,9 +16,10 @@
     height: $tbh;
     grid-area: bars;
     grid-column: 1/2;
+    display: flex;
+    align-self: center;
 
     i {
-      padding: 1rem 1.5rem;
       color: clr(wht);
     }
   }
@@ -29,12 +30,11 @@
     font-size: 1.5rem;
     grid-area: logo;
     grid-column: 2/3;
-    display: flexbox;
+    display: flex;
+    align-self: center;
 
     img {
       justify-items: center;
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
     }
   }
 
