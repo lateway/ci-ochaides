@@ -17,6 +17,7 @@
     grid-area: bars;
     grid-column: 1/2;
     display: flex;
+    justify-content: center;
     align-self: center;
 
     i {
@@ -25,7 +26,6 @@
   }
 
   .logo {
-    height: $tbh;
     color: tomato;
     font-size: 1.5rem;
     grid-area: logo;

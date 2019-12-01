@@ -658,6 +658,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
 }
@@ -667,7 +670,6 @@ body {
 }
 
 #tb .logo {
-  height: 72px;
   color: tomato;
   font-size: 1.5rem;
   -ms-grid-row: 1;
