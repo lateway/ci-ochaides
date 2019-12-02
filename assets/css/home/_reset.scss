@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+@import "mixins";
 html,
 body,
 div,
@@ -89,7 +89,7 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
+  vertical-align: middle;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -105,7 +105,13 @@ nav,
 section {
   display: block;
 }
-body {
+body,
+html {
+  background-color: clr(wrap-color);
+  font-family: "play", sans-serif;
+  font-size: 16px;
+  width: wd(1) !important;
+  overflow-x: hidden;
   line-height: 1;
 }
 ol,

@@ -1,10 +1,19 @@
 <div id="wrap">
+
 	<div class="hd">
-		<img src="<?= base_url('assets/img/bg/head-bg.png') ?>" alt="">
+
 		<header>
-			<h1>hello world</h1>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum vero maxime rerum voluptatem tenetur eum facere harum nisi autem sint?</p>
+			<div class="head-img">
+				<div class="head-text">
+					<h1>Ngoding kuy !</h1>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum vero maxime rerum voluptatem tenetur eum facere harum nisi autem sint?</p>
+				</div>
+			</div>
 		</header>
+
+		<div class="tabs">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod voluptate illum molestias odit culpa optio!</p>
+		</div>
 	</div>
 
 	<!-- wrap begin :: DONT REMOVE OR DELETE-->
@@ -24,7 +33,7 @@
 
 	</div>
 
-	<div class="rb">
+	<div class="sb">
 		<!-- right bar -->
 		<!-- Add your content below this comen bro -->
 		<h3> POPULAR POST </h3>

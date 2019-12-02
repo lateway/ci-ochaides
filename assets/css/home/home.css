@@ -88,7 +88,7 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
+  vertical-align: middle;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -106,7 +106,13 @@ section {
   display: block;
 }
 
-body {
+body,
+html {
+  background-color: clr(wrap-color);
+  font-family: "play", sans-serif;
+  font-size: 16px;
+  width: wd(1) !important;
+  overflow-x: hidden;
   line-height: 1;
 }
 
@@ -210,18 +216,9 @@ table {
   color: rgba(255, 255, 255, 0.3);
 }
 
-body {
-  display: -ms-grid;
-  display: grid;
-  font-family: "play", sans-serif;
-  font-size: 16px;
-  width: 100% !important;
-  overflow-x: hidden;
-}
-
 #tb {
   /* ------------------TOP BAR AREA*/
-  width: 100%;
+  width: 1263px;
   background-color: #007fe6f3;
   position: fixed;
   height: 72px !important;
@@ -441,6 +438,7 @@ body {
 }
 
 #lb {
+  display: none;
   background-color: #007fe6f3;
   position: fixed;
   width: 72px;
@@ -507,15 +505,18 @@ body {
 }
 
 #wrap {
+  width: 1100px;
+  margin: 0 auto;
   font-family: "dosis", sans-serif;
   font-size: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 72px 3fr 1.4fr 72px;
-      grid-template-columns: 72px 3fr 1.4fr 72px;
-  -ms-grid-rows: 600px 10fr 56px;
-      grid-template-rows: 600px 10fr 56px;
-      grid-template-areas: " header header header header" "leftsidebar content sidebar rightsidebar" "leftsidebar footer footer rightsidebar";
+  justify-items: center;
+  -ms-grid-columns: 0 2fr 1fr;
+      grid-template-columns: 0 2fr 1fr;
+  -ms-grid-rows: 100vh 10fr 56px;
+      grid-template-rows: 100vh 10fr 56px;
+      grid-template-areas: "header header header" "content sidebar sidebar" "footer footer footer";
 }
 
 @media only screen and (max-width: 720px) {
@@ -524,80 +525,109 @@ body {
         grid-template-columns: 72px 1fr;
     -ms-grid-rows: 200px auto auto 40px;
         grid-template-rows: 200px auto auto 40px;
-        grid-template-areas: "header header" "content content" "sidebar sidebar" "footer footer";
+        grid-template-areas: "header header " "content content" "sidebar sidebar" "footer footer";
   }
 }
 
 #wrap .hd {
-  margin: 75px auto auto 75px;
-  width: calc(100vw - $tbh);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin: calc(75px + 1rem) 0;
+  width: calc(wd(1) - $tbh);
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
+  -ms-grid-column-span: 3;
   grid-area: header;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
-  grid-column: 1/5;
+  grid-column: 1 / span 4;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 70vh 1fr;
+      grid-template-rows: 70vh 1fr;
+      grid-template-areas: "head head" "tabs login";
 }
 
-#wrap .hd img {
-  width: 100%;
+#wrap .hd header .head-img {
+  width: 1100px;
   height: 100%;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  opacity: 0.5;
+  background: url(../../img/bg/head-bg.png) no-repeat center;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: origin;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
-  clear: both;
+  position: relative;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: head;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / span 4;
 }
 
-#wrap .hd header {
-  background-color: #39df5d;
-  opacity: 0.6;
-  border-radius: 10px;
-  width: 70%;
-  height: 000px;
-  border-radius: 10px 50px;
-  vertical-align: middle;
+#wrap .hd header .head-img .head-text {
+  position: relative;
   padding: 1em;
-  position: absolute;
-  top: 10%;
-  right: 0;
-  left: 0;
+  -webkit-box-shadow: 1px 1px 3px #888888;
+          box-shadow: 1px 1px 3px #888888;
+  border-radius: 1em;
 }
 
-#wrap .hd header h1 {
+#wrap .hd header .head-img .head-text h1 {
   font-weight: bold;
   font-family: "play", georgia;
-  font-size: 3rem;
+  font-size: 4rem;
   text-transform: capitalize;
+  color: #007fe6f3;
 }
 
-#wrap .hd header p {
-  font-size: 16px;
+#wrap .hd header .head-img .head-text p {
+  margin-top: 1em;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+#wrap .hd header .head-img .head-text a {
+  color: #ff6561;
+}
+
+#wrap .hd .tabs {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: tabs;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  display: block;
 }
 
 #wrap .ct {
   background-color: #fff;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.2;
   font-family: "dosis", sans-serif;
   -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   grid-area: content;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
   padding: 1rem;
 }
 
-#wrap .rb {
+#wrap .sb {
   background-color: #fff;
   font-family: "dosis", sans-serif;
   -ms-grid-row: 2;
-  -ms-grid-column: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
   grid-area: sidebar;
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
@@ -608,8 +638,8 @@ body {
 #wrap .eb {
   background-color: #eeeeee;
   -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-area: footer;
 }
 /*# sourceMappingURL=home.css.map */

@@ -11,6 +11,7 @@ $colors: (
   item: rgb(0, 0, 0),
   item2: rgba(0, 0, 0, 0.2),
   item5: rgba(0, 0, 0, 0.5),
+  item7: rgba(0, 0, 0, 0.7),
   dark: #21292d,
   trans: rgba(255, 255, 255, 0),
   pinkp: #ff6561,
@@ -19,6 +20,19 @@ $colors: (
   coffeemilk: #f4d381
 );
 
+$widths: (
+  1: 1263px,
+  2: 600px,
+  3: 400px,
+  4: 300px,
+  5: 240px,
+  6: 200px,
+  wrap: 1100px
+);
+
+@function wd($widths-number) {
+  @return map-get($widths, $widths-number);
+}
 @function clr($color-name) {
   @return map-get($colors, $color-name);
 }
