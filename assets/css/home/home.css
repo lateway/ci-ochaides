@@ -573,7 +573,13 @@ table {
 }
 
 #wrap .hd header .head-img .head-text {
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  right: 15%;
   padding: 1em;
   -webkit-box-shadow: 1px 1px 3px #888888;
           box-shadow: 1px 1px 3px #888888;
