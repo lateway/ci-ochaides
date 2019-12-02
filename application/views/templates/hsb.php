@@ -11,16 +11,3 @@
 
     </ul>
 </div>
-
-<!-- <div id="rb"> -->
-<!-- right bar -->
-<!-- <ul>
-        <li><a href="#" class="active"><i class="material-icons">home</i></a></li>
-        <li><a href="#"><i class="small material-icons">mail</i></a></li>
-        <li><a href="#"><i class="small material-icons">contacts</i></a></li>
-        <li><a href="#"><i class="small material-icons">feedback</i></a></li>
-        <li><a href="#"><i class="small material-icons">forum</i></a></li>
-        <li><a href="#"><i class="small material-icons">more_horiz</i></a></li>
-
-    </ul>
-</div> -->

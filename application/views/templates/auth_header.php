@@ -12,11 +12,9 @@
 	<title><?= $title; ?></title>
 
 	<!-- Custom fonts for this template-->
-	<link href="<?= base_url('assets/'); ?>fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-	<link href='https://fonts.googleapis.com/css?family=Play:400,700&display=swap&subset=cyrillic' rel='stylesheet' />
 
 	<!-- Custom styles for this template-->
-	<link href="<?= base_url('assets/'); ?>bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
+	<link href="<?= base_url('assets/'); ?>sbadmin2/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 

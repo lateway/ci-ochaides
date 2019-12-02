@@ -12,10 +12,8 @@
 	<title><?= $title; ?></title>
 
 	<!-- Custom fonts for this template-->
-	<link href="<?= base_url('assets/'); ?>fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
-	<link href="<?= base_url('assets/'); ?>bootstrap/css/sb-admin-2.css" rel="stylesheet" type="text/css">
-	<link href="<?= base_url('assets/'); ?>css/style-admin.css" rel="stylesheet" type="text/css">
-	<link href='https://fonts.googleapis.com/css?family=Play:400,700&display=swap&subset=cyrillic' rel='stylesheet' />
+	<link href="<?= base_url('assets/'); ?>sbadmin2/css/sb-admin-2.css" rel="stylesheet" type="text/css">
+	<link href="<?= base_url('assets/'); ?>css/admin.css" rel="stylesheet" type="text/css">
 
 
 </head>

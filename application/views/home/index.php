@@ -1,4 +1,12 @@
 <div id="wrap">
+	<div class="hd">
+		<img src="<?= base_url('assets/img/bg/head-bg.png') ?>" alt="">
+		<header>
+			<h1>hello world</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum vero maxime rerum voluptatem tenetur eum facere harum nisi autem sint?</p>
+		</header>
+	</div>
+
 	<!-- wrap begin :: DONT REMOVE OR DELETE-->
 	<div class="ct">
 		<!-- center bar -->

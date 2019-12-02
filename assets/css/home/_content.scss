@@ -1,36 +1,75 @@
 //--------------------------------------------------------------------------- CONTENT
 #wrap {
-  display: grid;
   font-family: "dosis", sans-serif;
   font-size: 1rem;
   color: clr(item6);
-  transition: margin-left 0.5s;
-  grid-template-columns: 72px 3fr 1.4fr 72px;
-  grid-template-rows: 400px 10fr 56px;
+  display: grid;
+  grid-template-columns: $tbh 3fr 1.4fr $tbh;
+  grid-template-rows: 600px 10fr 56px;
   grid-template-areas:
-    "header header header"
-    "leftsidebar content sidebar"
-    "leftsidebar footer footer";
+    " header header header header"
+    "leftsidebar content sidebar rightsidebar"
+    "leftsidebar footer footer rightsidebar";
   @include mq-max(720px) {
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: $tbh 1fr;
     grid-template-rows: 200px auto auto 40px;
     grid-template-areas:
       "header header"
-      "leftsidebar content"
-      "leftsidebar sidebar rightsidebar"
-      "leftsidebar footer";
+      "content content"
+      "sidebar sidebar"
+      "footer footer";
   }
 
   //---------------------------------------- HEADER
   .hd {
+    margin: 75px auto auto 75px;
+    width: calc(100vw - $tbh);
+    display: flex;
     grid-area: header;
-    background-color: clr(wht2);
+    grid-column: 1/5;
+
+    img {
+      width: 100%;
+      height: 100%;
+      align-self: center;
+      opacity: 0.5;
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+      clear: both;
+    }
+
+    header {
+      background-color: clr(mygreen);
+      opacity: 0.6;
+      border-radius: 10px;
+      width: 70%;
+      height: 000px;
+      border-radius: 10px 50px;
+      vertical-align: middle;
+      padding: 1em;
+      position: absolute;
+      top: 10%;
+      right: 0;
+      left: 0;
+
+      h1 {
+        font-weight: bold;
+        font-family: "play", georgia;
+        font-size: 3rem;
+        text-transform: capitalize;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
   }
   //---------------------------------------- CONTENT
   .ct {
     background-color: clr(wht);
     font-family: "dosis", sans-serif;
     grid-area: content;
+    grid-column: 2/3;
     padding: 1rem;
   }
 
@@ -39,6 +78,8 @@
     background-color: clr(wht);
     font-family: "dosis", sans-serif;
     grid-area: sidebar;
+    grid-column: 3/4;
+
     padding: 1rem;
   }
 

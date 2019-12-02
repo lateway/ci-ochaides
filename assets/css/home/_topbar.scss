@@ -42,6 +42,10 @@
   }
 
   // NEWS SLIDER
+  .newslider {
+    grid-area: news;
+    grid-column: 3/4;
+  }
 
   // LINK NAVIGATION
   .nav_link {
