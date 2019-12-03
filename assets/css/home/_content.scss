@@ -40,11 +40,9 @@
       .head-img {
         width: wd(wrap);
         height: 100%;
-        background: url(../../img/bg/head-bg.png) no-repeat center;
+        background: url(../../img/bg/jumbotron-bg.jpg) no-repeat center;
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
         background-size: origin;
         @include clip-message;
         position: relative;
@@ -52,7 +50,7 @@
         grid-column: 1 / span 4;
 
         .head-text {
-          display: flex;
+          display: block;
           position: absolute;
           top: 5%;
           left: 15%;
@@ -67,12 +65,14 @@
             font-size: 4rem;
             text-transform: capitalize;
             color: clr(blue);
+            @include tsdw;
           }
 
           p {
             margin-top: 1em;
             font-size: 1.5rem;
-            color: clr(item7);
+            color: clr(pinkp);
+            @include tsdw;
           }
 
           a {
