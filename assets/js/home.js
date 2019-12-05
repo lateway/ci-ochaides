@@ -1,5 +1,5 @@
 //------------------------------------------Topbar resize @oci_tz----------------------------------------------
-// When the user scrolls down 50px from the top, resize the topbar's height
+// When the user scrolls down 72px from the top, resize the topbar's height
 const tb = document.getElementById('tb');
 
 window.addEventListener('scroll', function () {

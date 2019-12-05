@@ -1,0 +1,103 @@
+@import "var";
+@import "mixins";
+//------------------------------------------------------------------------------------CARDS
+.box {
+  margin: 0 auto;
+  position: relative;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 0 20px;
+
+  .card {
+    position: relative;
+    width: 220px;
+    height: 400px;
+    background: #070b1be5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+
+    .card-content {
+      width: 220px;
+      background-color: clr(wht);
+
+      h2 {
+        width: inherit;
+        position: absolute;
+        font-size: 8rem;
+        top: 5%;
+        left: 50%;
+      }
+      &:hover {
+        background-color: clr(tomat1);
+      }
+    }
+  }
+}
+//------------------------------------------------------------------------------------TOOLTIPS
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltiptext {
+  font-family: "play", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  visibility: hidden;
+  width: 80px;
+  background-color: clr(gray5);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 3px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: -5%;
+  margin-right: -72px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 25%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+//------------------------------------------------------------------------------------LEFT BOTTOM REPORT
+.icon-bar {
+  position: fixed;
+  left: 0.5rem;
+  bottom: 1rem;
+  -webkit-transform: translateY(-1rem);
+  -ms-transform: translateY(-1rem);
+  transform: translateY(-1rem);
+
+  a {
+    display: block;
+    text-align: center;
+    padding: 6px;
+    color: clr(item5);
+    font-size: 18px;
+
+    &:hover {
+      background-color: clr(purple1);
+      color: clr(wht);
+      @include rad(50%);
+      @include sdw;
+    }
+  }
+}

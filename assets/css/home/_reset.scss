@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import "var";
 @import "mixins";
 html,
 body,
@@ -105,14 +106,21 @@ nav,
 section {
   display: block;
 }
-body,
 html {
+  width: 1200px;
+  display: grid;
+}
+body {
   background-color: clr(wrap-color);
   font-family: "play", sans-serif;
   font-size: 16px;
-  width: wd(1) !important;
+  width: w(0) !important;
   overflow-x: hidden;
   line-height: 1;
+
+  @include mq-max(720px) {
+    font-size: 14px;
+  }
 }
 ol,
 ul {

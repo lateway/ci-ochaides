@@ -1,91 +1,181 @@
+@import "var";
+@import "mixins";
 //--------------------------------------------------------------------------- CONTENT
 #wrap {
-  width: wd(wrap);
+  height: h(0);
+  width: w(wrap);
   margin: 0 auto;
   font-family: "dosis", sans-serif;
   font-size: 1rem;
   display: grid;
-  justify-items: center;
-  grid-template-columns: 0 2fr 1fr;
-  grid-template-rows: 100vh 10fr 56px;
+  grid-template-rows: 80vh 300px auto auto 56px;
   grid-template-areas:
-    "header header header"
-    "content sidebar sidebar"
-    "footer footer footer";
-  @include mq-max(720px) {
-    grid-template-columns: $tbh 1fr;
-    grid-template-rows: 200px auto auto 40px;
-    grid-template-areas:
-      "header header "
-      "content content"
-      "sidebar sidebar"
-      "footer footer";
+    "header"
+    "htab"
+    "content"
+    "partner"
+    "footer";
+
+  @include mq-max(600px) {
+    display: block;
   }
 
   //---------------------------------------- HEADER
   .hd {
-    margin: calc(75px + 1rem) 0;
-    width: calc(wd(1) - $tbh);
+    margin: 75px auto;
+    width: inherit;
+    height: h(0);
+    display: flex;
     grid-area: header;
-    grid-column: 1 / span 4;
-    display: grid;
-    justify-content: start;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 70vh 1fr;
-    grid-template-areas:
-      "head head"
-      "tabs login";
 
-    header {
-      .head-img {
-        width: wd(wrap);
-        height: 100%;
-        background: url(../../img/bg/jumbotron-bg.jpg) no-repeat center;
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-size: origin;
-        @include clip-message;
-        position: relative;
-        grid-area: head;
-        grid-column: 1 / span 4;
-
-        .head-text {
-          display: block;
-          position: absolute;
-          top: 5%;
-          left: 15%;
-          right: 15%;
-          padding: 1em;
-          @include sdw;
-          @include rad(1em);
-
-          h1 {
-            font-weight: bold;
-            font-family: "play", georgia;
-            font-size: 4rem;
-            text-transform: capitalize;
-            color: clr(blue);
-            @include tsdw;
-          }
-
-          p {
-            margin-top: 1em;
-            font-size: 1.5rem;
-            color: clr(pinkp);
-            @include tsdw;
-          }
-
-          a {
-            color: clr(pinkp);
-          }
-        }
-      }
+    @include mq-max(600px) {
+      height: 300px;
+      display: block;
     }
 
-    .tabs {
-      grid-area: tabs;
-      grid-column: 1/4;
+    header {
+      width: inherit;
+      height: auto;
+
+      .head-img {
+        height: h(5);
+        background: url(../../img/bg/notebook.jpg) no-repeat top center;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-size: contain;
+        @include clip-message;
+      }
+
+      .head-text {
+        visibility: hidden;
+        width: w(5);
+        height: auto;
+        position: relative;
+        display: block;
+        font-size: 1rem;
+        word-wrap: break-word;
+
+        @include mq-max(600px) {
+          width: w(5);
+          height: h(1);
+          margin: 0;
+          padding-right: 2rem;
+          font-size: 0.8rem;
+        }
+
+        h1 {
+          padding: 1rem;
+          padding-left: 3rem;
+          font-weight: bold;
+          font-family: "play", georgia;
+          font-size: 4em;
+          text-transform: capitalize;
+          color: clr(blue2);
+          @include tsdw;
+          @include mq-max(600px) {
+            width: w(3);
+            padding-left: 0.5rem;
+            font-size: 2em;
+          }
+        }
+
+        p {
+          margin-top: 2rem;
+          padding-left: 3rem;
+          font-size: 1.2em;
+          color: clr(google);
+          @include tsdw;
+          @include mq-max(600px) {
+            padding-left: 0.5rem;
+            width: w(3);
+            font-size: 0.8rem;
+            margin-top: 0;
+          }
+        }
+
+        a {
+          color: clr(pinkp);
+        }
+      }
+
+      .brand {
+        margin: 0 auto;
+        display: flex;
+        width: 300px;
+        height: inherit;
+        position: absolute;
+        top: 10%;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+  //---------------------------------------- TABS
+  .htab {
+    margin: -20% 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
+    justify-content: center;
+    justify-items: center;
+    grid-gap: 10px;
+    max-width: 1200px;
+    grid-area: htab;
+    z-index: 3;
+
+    @include mq-max(720px) {
+      width: w(80%);
       display: block;
+      margin: 0 auto;
+    }
+
+    .item1,
+    .item2,
+    .item3 {
+      background-color: rgba(255, 255, 255, 0.315);
+      font-family: "dosis", Verdana, Geneva, Tahoma, sans-serif;
+      @include sdw;
+      @include rad(12px);
+      height: 200px;
+      padding: 0.5rem;
+      font-size: 1.2rem;
+
+      p {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        @include tsdw;
+      }
+
+      img {
+        position: relative;
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .item1 {
+      color: clr(ig);
+    }
+    .item2 {
+      color: clr(yt);
+      margin-top: 10%;
+    }
+    .item3 {
+      color: clr(fb);
+    }
+
+    @include mq-max(720px) {
+      .item1,
+      .item2,
+      .item3 {
+        width: 60%;
+        margin: 10px auto;
+        padding: 0.5rem;
+      }
+
+      .item2 {
+        margin-top: 0;
+      }
     }
   }
   //---------------------------------------- CONTENT
@@ -94,18 +184,25 @@
     color: clr(item7);
     line-height: 1.2;
     font-family: "dosis", sans-serif;
+    margin: -72px auto;
+    text-align: justify;
     grid-area: content;
-    grid-column: 1/3;
-    padding: 1rem;
+
+    @include mq-max(720px) {
+      display: block;
+      margin: 1rem;
+    }
   }
 
   //---------------------------------------- RIGHT SIDEBAR
-  .sb {
+  .pt {
     background-color: clr(wht);
+    color: clr(item7);
     font-family: "dosis", sans-serif;
-    grid-area: sidebar;
-    grid-column: 3/4;
-    padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 4rem;
+    text-align: justify;
+    grid-area: partner;
   }
 
   //---------------------------------------- END LOW BAR or FOOTER
@@ -113,4 +210,6 @@
     background-color: clr(wht2);
     grid-area: footer;
   }
-} //--------------------------------------------------------------------------- LAYOUT OFF
+}
+
+//--------------------------------------------------------------------------- LAYOUT OFF

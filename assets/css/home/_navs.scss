@@ -1,20 +1,21 @@
+@import "var";
+@import "mixins";
 //--------------------------------------------------------------------------- TOPBAR
 /* ------------------TOP BAR AREA*/
 #tb {
-  width: wd(1);
+  width: w(0);
   background-color: clr(wht);
   position: fixed;
   z-index: 999;
   display: grid;
-  grid-template-columns: 72px 150px 1fr 150px 72px;
+  grid-template-columns: 72px 1fr 4fr 1fr 72px;
   grid-template-areas: "bars logo news nav_link morevert";
-  justify-content: start;
+  justify-content: space-evenly;
   transition: all 300ms ease-in-out;
   @include sdw;
 
   // MENU BUTTON
   .bars {
-    height: inherit;
     grid-area: bars;
     grid-column: 1/2;
     display: flex;
@@ -65,7 +66,7 @@
       justify-content: flex-end;
       justify-items: center;
       list-style: none;
-      @include trans;
+      @include trans(0.5s);
 
       li {
         align-self: center;
@@ -94,10 +95,9 @@
           @include rad(50px);
         }
       }
-
-      @include mq-max(720px) {
-        display: none;
-      }
+    }
+    @include mq-max(500px) {
+      display: none;
     }
   }
 
@@ -142,7 +142,7 @@
       background-color: clr(trans);
 
       ul {
-        @include trans;
+        @include trans(0.5s);
         display: flexbox;
         justify-content: first baseline;
         justify-items: center;
@@ -187,17 +187,17 @@
 
 //-------------------------------------------------------------------------------- LEFT BAR MENU
 #lb {
-  background-color: clr(wht);
+  background-color: clr(trans);
   position: fixed;
   width: 72px;
   height: 100vh;
   top: $tbh;
   left: 0;
   bottom: 0;
+
   ul {
-    @include trans;
+    @include trans(0.5s);
     display: block;
-    justify-content: baseline;
     justify-items: center;
     list-style: none;
     height: 100vh;
@@ -209,7 +209,7 @@
       justify-items: center;
       list-style: none;
       display: flex;
-      height: 4em;
+      height: 3.6rem;
 
       a {
         color: clr(item5);
@@ -222,13 +222,12 @@
         }
 
         i {
+          color: clr(item5);
           align-self: center;
-          padding: 0;
         }
 
         span {
           display: block;
-          position: absolute;
           font-size: 0.6rem;
           text-transform: capitalize;
         }
@@ -236,9 +235,9 @@
     }
   }
   //for javascript toggle
-  .hidelb {
-    display: none;
-  }
+}
+.hidelb {
+  display: none;
 }
 
 //---------------------------------------------------------------------------------- RIGHT BAR MENU

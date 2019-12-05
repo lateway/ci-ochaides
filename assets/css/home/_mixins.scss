@@ -27,6 +27,7 @@
 @mixin sdw {
   box-shadow: 1px 1px 3px #888888;
 }
+
 @mixin tsdw {
   text-shadow: 1px 1px 1px #0f0f0f;
 }
@@ -43,8 +44,8 @@
   text-transform: capitalize;
 }
 
-@mixin trans {
-  transition: 0.5s;
+@mixin trans($level) {
+  transition: $level;
 }
 
 @mixin mp0 {
@@ -58,6 +59,6 @@
 }
 
 @mixin clip-message {
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
