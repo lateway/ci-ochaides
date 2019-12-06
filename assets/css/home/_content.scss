@@ -1,5 +1,3 @@
-@import "var";
-@import "mixins";
 //--------------------------------------------------------------------------- CONTENT
 #wrap {
   height: h(0);
@@ -16,19 +14,18 @@
     "partner"
     "footer";
 
-  @include mq-max(600px) {
+  @include mq-max(720px) {
     display: block;
   }
 
   //---------------------------------------- HEADER
   .hd {
-    margin: 75px auto;
     width: inherit;
     height: h(0);
     display: flex;
     grid-area: header;
 
-    @include mq-max(600px) {
+    @include mq-max(720px) {
       height: 300px;
       display: block;
     }
@@ -44,6 +41,11 @@
         background-attachment: fixed;
         background-size: contain;
         @include clip-message;
+        @include mq-max(720px) {
+          margin: 0 auto;
+          height: 220px;
+          width: 80%;
+        }
       }
 
       .head-text {
@@ -107,24 +109,30 @@
         top: 10%;
         left: 0;
         right: 0;
+        @include mq-max(720px) {
+          height: 100px;
+          width: 100px;
+          top: 15%;
+        }
       }
     }
   }
   //---------------------------------------- TABS
   .htab {
-    margin: -20% 5%;
+    height: 400px;
+    margin: -20% auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 300px;
     justify-content: center;
     justify-items: center;
-    grid-gap: 10px;
+    grid-gap: 5rem;
     max-width: 1200px;
     grid-area: htab;
     z-index: 3;
 
     @include mq-max(720px) {
-      width: w(80%);
+      height: auto;
       display: block;
       margin: 0 auto;
     }
@@ -132,33 +140,50 @@
     .item1,
     .item2,
     .item3 {
-      background-color: rgba(255, 255, 255, 0.315);
-      font-family: "dosis", Verdana, Geneva, Tahoma, sans-serif;
+      display: grid;
+      background-color: rgba(255, 255, 255, 0.205);
+      font-family: "dosis", Verdana, Tahoma, sans-serif;
       @include sdw;
       @include rad(12px);
       height: 200px;
       padding: 0.5rem;
       font-size: 1.2rem;
 
-      p {
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: bold;
+      @include mq-max(720px) {
+        display: block;
+        margin: 0 auto;
+      }
+
+      h3 {
+        height: 20px;
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        color: clr(wht);
         @include tsdw;
+        text-align: center;
+        text-transform: capitalize;
       }
 
       img {
-        position: relative;
-        width: 200px;
-        height: 200px;
+        margin: 0 auto;
+        padding: 0;
+        width: 150px;
+        height: 150px;
+      }
+
+      a {
+        text-align: center;
+        text-decoration: none;
       }
     }
+
     .item1 {
       color: clr(ig);
     }
     .item2 {
       color: clr(yt);
-      margin-top: 10%;
+      margin-top: 15%;
     }
     .item3 {
       color: clr(fb);
@@ -171,6 +196,13 @@
         width: 60%;
         margin: 10px auto;
         padding: 0.5rem;
+
+        h3,
+        img,
+        a {
+          display: block;
+          align-self: center;
+        }
       }
 
       .item2 {
@@ -180,22 +212,87 @@
   }
   //---------------------------------------- CONTENT
   .ct {
+    width: w(3);
     background-color: clr(wht);
     color: clr(item7);
     line-height: 1.2;
     font-family: "dosis", sans-serif;
-    margin: -72px auto;
+    margin: -10rem auto 3rem;
     text-align: justify;
     grid-area: content;
 
+    h3,
+    p {
+      font-family: "play", Arial, Helvetica, sans-serif;
+      display: block;
+      text-align: center;
+    }
+    h3 {
+      font-size: 2rem;
+      color: clr(item);
+    }
+    p {
+      font-size: 1rem;
+    }
     @include mq-max(720px) {
       display: block;
       margin: 1rem;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px;
+      max-width: 1000px;
+      z-index: 4;
+
+      @include mq-max(500px) {
+        display: block;
+        height: auto;
+        margin: 3rem auto;
+      }
+
+      .info1,
+      .info2,
+      .info3,
+      .info4,
+      .info5,
+      .info6 {
+        font-size: 1rem;
+        height: 100px;
+        padding: 0.5rem;
+        display: flex;
+        text-align: justify;
+
+        @include mq-max(720px) {
+          margin-top: 10px;
+          height: auto;
+        }
+      }
+
+      .info1,
+      .info3,
+      .info5 {
+        box-shadow: sdw(vi);
+        justify-content: start;
+        text-align: left;
+        float: left;
+      }
+      .info2,
+      .info4,
+      .info6 {
+        box-shadow: sdw(pi);
+        justify-content: end;
+        text-align: right;
+        float: right;
+      }
     }
   }
 
   //---------------------------------------- RIGHT SIDEBAR
   .pt {
+    margin: 5rem auto;
+    width: w(2);
     background-color: clr(wht);
     color: clr(item7);
     font-family: "dosis", sans-serif;
@@ -203,6 +300,12 @@
     margin-right: 4rem;
     text-align: justify;
     grid-area: partner;
+    h3 {
+      height: 30px;
+    }
+    p {
+      height: 300px;
+    }
   }
 
   //---------------------------------------- END LOW BAR or FOOTER

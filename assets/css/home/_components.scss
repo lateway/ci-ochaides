@@ -1,5 +1,3 @@
-@import "var";
-@import "mixins";
 //------------------------------------------------------------------------------------CARDS
 .box {
   margin: 0 auto;
@@ -12,7 +10,7 @@
 
   .card {
     position: relative;
-    width: 220px;
+    width: 30px;
     height: 400px;
     background: #070b1be5;
     display: flex;

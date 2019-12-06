@@ -32,10 +32,10 @@ $colors: (
   gray8: #5a5c69,
   gray9: #3a3b45,
   google: #ea4335,
-  fb: #3b5998,
+  fb: #5175c2,
   tw: #0392d4,
-  ig: #a50990,
-  yt: #ff0000
+  ig: #c73db5,
+  yt: #d10000
 );
 @function clr($color-name) {
   @return map-get($colors, $color-name);
@@ -49,7 +49,7 @@ $linear: (
   4: linear-gradient(315deg, #ff0000, #ffc107)
 );
 @function lnr($linear-number) {
-  @return map-get($linear, $linera-number);
+  @return map-get($linear, $linear-number);
 }
 
 //----------------------------------------------------------------------------
@@ -75,6 +75,16 @@ $gradients: (
 );
 @function grad($gradient-name) {
   @return map-get($gradients, $gradient-name);
+}
+//----------------------------------------------------------------------------
+$shadows: (
+  gr: 1px 1px 5px #24cc94,
+  vi: 1px 1px 5px #9050e4,
+  bl: 1px 1px 5px #0392d4,
+  pi: 1px 1px 5px #d403c9
+);
+@function sdw($sdw-clr) {
+  @return map-get($shadows, $sdw-clr);
 }
 
 //----------------------------------------------------------------------------
